@@ -1,34 +1,34 @@
 # Kill Enemy
-# This text generates prompts for when the player kills the enemy.
+# This text generates prompts for when the player kills the enemy with a bow and arrow.
 
 prompt = """
 Name: Keaton
 Enemy: Ghoul
-Description: Keaton slayed the ghoul with his bloody sword, slicing off both their arms. The ghoul could no longer move and died.
+Description: Keaton slays the ghoul with a perfect shot, piercing its heart. The ghoul dies instantly.
 
 --
 
 Name: Abhi
 Enemy: Ghost
-Description: Abhi killed the ghost by poking his sharp blade right into the ghost's chest. The ghost attempted to escape, but bled to death.
+Description: The ghost tries to escape Abhi's wrath, but is shot in the back with an arrow.
 
 --
 
 Name: Bill
 Enemy: Demon
-Description: Initially, the demon dodges Bill's attack. But Bill swiftly recovers and slashes his sword across the demon's face. The demon, unable to express any emotion, passes away.
+Description: Bill nails the demon between the eyes. 
 
 --
 
 Name: Bob
-Enemy: Ghost
-Description: Bob went on to kill the ghost, as he couldn't move without being able to control the undead, which Bob had severed from the person. Bob used a large pair of pliers to kill the ghost, by placing the ghost's head through the pliers and pressing down on the head.
+Enemy: Zombie
+Description: A zombie hurls itself towards Bob, but Bob isn't having it. He shoots that zombie in the face.
 
 --
 
 Name: Kevin
 Enemy: Knight
-Description: Kevin's arrow pierced through the knight's neck, severing it. The knight is dead.
+Description: Kevin's arrow pierces through the knight's neck, severing it. The knight is dead.
 
 --
 

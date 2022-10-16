@@ -27,3 +27,7 @@ func set_player(player):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
+
+
+func _on_Mob_body_entered(body):
+	print(body)

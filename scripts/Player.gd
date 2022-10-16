@@ -66,7 +66,7 @@ func decrement_health(mob_name):
 	if health == 0:
 		_textbox.get_death_message(mob_name)
 		try_again_button.show()
-		hide()
+		queue_free()
 	else:
 		_textbox.get_damage_message(mob_name, health * 25)
 

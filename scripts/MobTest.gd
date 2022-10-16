@@ -30,7 +30,7 @@ func _on_MobTimer_timeout():
 	add_child(orc)
 	orc.set_player($Player)
 	print($MobTimer.wait_time)
-	$MobTimer.wait_time *= 0.98
+	$MobTimer.wait_time *= 0.97
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()

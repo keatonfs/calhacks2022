@@ -1,4 +1,4 @@
-extends "res://Entity.gd"
+extends KinematicBody2D
 
 export (int) var speed = 200
 

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="calhacks2022"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Player.tscn"
 config/icon="res://icon.png"
 
 [gui]

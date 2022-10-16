@@ -35,7 +35,6 @@ script = ExtResource( 10 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 2
 playing = true
 
 [node name="AttackTimer" type="Timer" parent="."]

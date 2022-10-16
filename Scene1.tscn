@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wall_banner_blue.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wall_goo_base.png" type="Texture" id=32]
 [ext_resource path="res://assets/audio/maxkomusic-medieval-fantasy.mp3" type="AudioStream" id=33]
 [ext_resource path="res://assets/audio/Score.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/Box.tscn" type="PackedScene" id=35]
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
 points = PoolVector2Array( 16, 8, 0, 8, 0, 0, 16, 0 )
@@ -548,6 +549,7 @@ visible = false
 [node name="Player" parent="MobGen" instance=ExtResource( 1 )]
 visible = false
 position = Vector2( 460, 255 )
+z_index = 10
 
 [node name="TryAgain" parent="." instance=ExtResource( 30 )]
 visible = false
@@ -559,5 +561,14 @@ volume_db = -6.0
 autoplay = true
 
 [node name="Score" parent="." instance=ExtResource( 34 )]
+
+[node name="Box" parent="." instance=ExtResource( 35 )]
+position = Vector2( 187, 225 )
+
+[node name="Box2" parent="." instance=ExtResource( 35 )]
+position = Vector2( 885, 327 )
+
+[node name="Box3" parent="." instance=ExtResource( 35 )]
+position = Vector2( 588, 145 )
 
 [connection signal="visibility_changed" from="UserInput" to="." method="_on_UserInput_visibility_changed"]

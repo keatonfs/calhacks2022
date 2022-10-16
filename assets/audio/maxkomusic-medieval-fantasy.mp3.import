@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/maxkomusic-medieval-fantasy.mp3-9b0db030c329838be3f09692db28ccda.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/maxkomusic-medieval-fantasy.mp3"
+dest_files=[ "res://.import/maxkomusic-medieval-fantasy.mp3-9b0db030c329838be3f09692db28ccda.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

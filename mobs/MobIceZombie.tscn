@@ -35,7 +35,7 @@ contacts_reported = 2
 contact_monitor = true
 script = ExtResource( 7 )
 speed = 70
-enemy_type = "ice zombie"
+enemy_type = "ice-zombie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

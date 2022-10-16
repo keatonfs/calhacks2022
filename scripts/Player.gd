@@ -21,6 +21,8 @@ const FACING_DIRECTION = {
 var direction = FACING_DIRECTION.LEFT
 
 func get_input():
+	if !visible:
+		return
 	velocity = Vector2()
 	if Input.is_action_pressed("right"):
 		velocity.x += 1

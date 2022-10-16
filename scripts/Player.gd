@@ -6,6 +6,7 @@ const arrow_scene = preload("res://Arrow.tscn")
 onready var _animated_sprite = $AnimatedSprite
 onready var attack_timer = $AttackTimer
 
+var health = 100
 var velocity = Vector2()
 
 const FACING_DIRECTION = {

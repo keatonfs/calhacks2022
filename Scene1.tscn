@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wall_banner_blue.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/coulmn_base.png" type="Texture" id=36]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/column_top.png" type="Texture" id=37]
 [ext_resource path="res://Column.tscn" type="PackedScene" id=38]
+[ext_resource path="res://FireFountain.tscn" type="PackedScene" id=39]
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -622,5 +623,9 @@ position = Vector2( 885, 327 )
 position = Vector2( 588, 145 )
 
 [node name="MobGen" parent="YSort" instance=ExtResource( 29 )]
+
+[node name="w" parent="YSort" instance=ExtResource( 39 )]
+position = Vector2( 480, 225 )
+scale = Vector2( 2, 2 )
 
 [connection signal="visibility_changed" from="UserInput" to="." method="_on_UserInput_visibility_changed"]

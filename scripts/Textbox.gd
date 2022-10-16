@@ -6,7 +6,7 @@ onready var textbox_container = $TextboxContainer
 onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
 onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
 onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label2
-
+onready var _html = $HTTPRequest
 onready var user_input = get_tree().current_scene.get_node("UserInput")
 onready var start_button = get_tree().current_scene.get_node("StartButton")
 
@@ -25,6 +25,7 @@ var tutorial_text_queue = ["Welcome to the Arena! (Press Enter to Continue)", "M
 
 func _ready():
 	print("Starting state: State.READY")
+	get_intro_message()
 
 func _process(delta):
 	match current_state:
@@ -89,8 +90,18 @@ func change_state(next_state):
 			pass
 		State.TUTORIAL:
 			print("Changing state to State.TUTORIAL")
+			
+
+func get_intro_message():
+	var response = "http://127.0.0.1:5000/announcer?name=Keaton&pronouns=he/him&descriptions=plain&record=None&nickname=Keaty"
+	_html.request("http://127.0.0.1:5000/take-damage?name=Keaton&enemy=Demon&health=100")
 
 
 func _on_Textbox_visibility_changed():
 	current_state = State.TUTORIAL
 	display_text(tutorial_text_queue.pop_front())
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print(body.get_string_from_utf8())
+	text_queue.append(body.get_string_from_utf8())

@@ -1,11 +1,17 @@
 extends Node2D
 
-export (PackedScene) var mob_scene
+export (PackedScene) var chort_scene
 export (PackedScene) var demon_scene
-export (PackedScene) var slime_scene
 export (PackedScene) var giant_scene
+export (PackedScene) var goblin_scene
+export (PackedScene) var ice_zombie_scene
+export (PackedScene) var ork_scene
+export (PackedScene) var skeleton_scene
+export (PackedScene) var slime_scene
+export (PackedScene) var zombie_scene
 
-onready var enemy_scenes = [mob_scene, demon_scene, slime_scene, giant_scene]
+
+onready var enemy_scenes = [chort_scene, demon_scene, giant_scene, goblin_scene, ice_zombie_scene, ork_scene, skeleton_scene, slime_scene, zombie_scene]
 onready var wave = $CanvasLayer
 onready var wave_label = $CanvasLayer/MarginContainer/Label
 
@@ -22,7 +28,7 @@ func end_game():
 	$MobTimer.stop()
 
 func _on_MobTimer_timeout():
-	var orc = enemy_scenes[randi() % 4].instance()
+	var orc = enemy_scenes[randi() % len(enemy_scenes)].instance()
 	#var orc = demon_scene.instance()
 	var orc_spawn_node = get_node("MobPath/MobPathSampler")
 	orc_spawn_node.offset = randi()

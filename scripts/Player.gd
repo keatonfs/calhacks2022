@@ -13,6 +13,8 @@ onready var bow_sfx = $AudioStreamPlayer2D
 var velocity = Vector2()
 var health = 4
 
+var alive = true
+
 const FACING_DIRECTION = {
 	LEFT = 0,
 	RIGHT = 1
@@ -21,7 +23,8 @@ const FACING_DIRECTION = {
 var direction = FACING_DIRECTION.LEFT
 
 func get_input():
-	if !visible:
+	if !alive:
+		velocity = Vector2.ZERO
 		return
 	velocity = Vector2()
 	if Input.is_action_pressed("right"):
@@ -44,6 +47,8 @@ func _physics_process(delta):
 	update_animation()
 	
 func update_animation():
+	if !alive:
+		return
 	if velocity == Vector2.ZERO:
 		_animated_sprite.play('idle')
 	else:
@@ -66,10 +71,11 @@ func decrement_health(mob_name):
 	health -= 1
 	hearts.decrement_heart()
 	if health == 0:
+		alive = false
 		_textbox.get_death_message(mob_name)
 		try_again_button.show()
-		$CollisionShape2D2.set_disabled(true)
-		hide()
+		rotate(PI/2)
+		_animated_sprite.stop()
 	else:
 		_textbox.get_damage_message(mob_name, health * 25)
 

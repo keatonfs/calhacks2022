@@ -11,7 +11,7 @@
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5, 16 )
+extents = Vector2( 11.5, 15.5 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -38,16 +38,17 @@ speed = 100
 enemy_type = "orc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.5, 4 )
+position = Vector2( 1.5, -16.5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, -21 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "Idle"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 2.5, 4 )
+position = Vector2( 1.5, -17 )
 scale = Vector2( 1.15, 1.6 )
 
 [connection signal="body_entered" from="." to="." method="_on_Mob_body_entered"]

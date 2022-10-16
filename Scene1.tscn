@@ -599,15 +599,21 @@ autoplay = true
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Column" parent="YSort" instance=ExtResource( 38 )]
-position = Vector2( 144, 88 )
-scale = Vector2( 3, 3 )
+position = Vector2( 257, 182 )
+scale = Vector2( 2.5, 2.5 )
+z_as_relative = false
+
+[node name="Column2" parent="YSort" instance=ExtResource( 38 )]
+position = Vector2( 619, 354 )
+scale = Vector2( 2.5, 2.5 )
 z_as_relative = false
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 120, 90 )
+visible = false
+position = Vector2( 512, 288 )
 
 [node name="Box" parent="YSort" instance=ExtResource( 35 )]
-position = Vector2( 187, 225 )
+position = Vector2( 212, 376 )
 
 [node name="Box2" parent="YSort" instance=ExtResource( 35 )]
 position = Vector2( 885, 327 )

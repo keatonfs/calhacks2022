@@ -62,7 +62,7 @@ func shoot_arrow():
 	if visible:
 		var arrow = arrow_scene.instance()
 		get_tree().current_scene.add_child(arrow)
-		arrow.global_position = global_position
+		arrow.global_position = global_position + Vector2(0, -20)
 		arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
 		attack_timer.start()
 		bow_sfx.play()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/Born2bSportyV2.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Textbox.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Textbox.gd" type="Script" id=2]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wizzard_f_idle_anim_f0.png" type="Texture" id=3]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wizzard_f_idle_anim_f2.png" type="Texture" id=4]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wizzard_f_idle_anim_f1.png" type="Texture" id=5]
@@ -71,6 +71,7 @@ rect_min_size = Vector2( 30, 0 )
 position = Vector2( 16, 32 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 1
 playing = true
 
 [node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]

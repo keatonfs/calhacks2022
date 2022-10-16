@@ -23,7 +23,7 @@
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wall_fountain_mid_blue_anim_f0.png" type="Texture" id=21]
 [ext_resource path="res://AnnouncerUI.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UserInput.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scripts/Scene1.gd" type="Script" id=24]
+[ext_resource path="res://Scene1.gd" type="Script" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 0, 8 )

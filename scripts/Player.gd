@@ -66,6 +66,7 @@ func decrement_health(mob_name):
 	if health == 0:
 		_textbox.get_death_message(mob_name)
 		try_again_button.show()
+		$CollisionShape2D2.set_disabled(true)
 		hide()
 	else:
 		_textbox.get_damage_message(mob_name, health * 25)

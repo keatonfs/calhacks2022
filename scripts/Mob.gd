@@ -28,6 +28,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_Mob_body_entered(body):
-	if "Player" in body.name:
+	if "Player" in body.name and _player.visible:
 		_player.decrement_health(enemy_type)
 		queue_free()

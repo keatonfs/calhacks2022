@@ -2,6 +2,7 @@ extends Area2D
 
 onready var _textbox = get_tree().current_scene.get_node("Textbox")
 onready var _user_input = get_tree().current_scene.get_node("UserInput")
+onready var score = get_tree().current_scene.get_node("Score")
 
 const speed = 300
 var velocity = Vector2(1, 0)
@@ -26,6 +27,7 @@ func _on_Arrow_body_entered(body):
 			_textbox.get_kill_message(body.enemy_type)
 			$KillTimer.start()
 		body.queue_free()
+		score.increment_score()
 	if body.name != "Player":
 		destroy()
 

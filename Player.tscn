@@ -35,11 +35,11 @@ script = ExtResource( 10 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.4
 one_shot = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

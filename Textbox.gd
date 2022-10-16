@@ -7,6 +7,8 @@ onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
 onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
 onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label2
 
+onready var user_input = get_tree().current_scene.get_node("UserInput")
+
 enum State {
 	NOT_READY
 	TUTORIAL,
@@ -20,7 +22,6 @@ var tutorial_text_queue = ["Welcome to the Arena! (Press Enter to Continue)", "M
 
 func _ready():
 	print("Starting state: State.READY")
-
 
 func _process(delta):
 	match current_state:

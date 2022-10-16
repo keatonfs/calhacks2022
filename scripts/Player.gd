@@ -8,6 +8,7 @@ onready var try_again_button = get_tree().current_scene.get_node("TryAgain")
 onready var _textbox = get_tree().current_scene.get_node("Textbox")
 onready var _animated_sprite = $AnimatedSprite
 onready var attack_timer = $AttackTimer
+onready var bow_sfx = $AudioStreamPlayer2D
 
 var velocity = Vector2()
 var health = 4
@@ -57,6 +58,7 @@ func shoot_arrow():
 		arrow.global_position = global_position
 		arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
 		attack_timer.start()
+		bow_sfx.play()
 
 func decrement_health(mob_name):
 	health -= 1

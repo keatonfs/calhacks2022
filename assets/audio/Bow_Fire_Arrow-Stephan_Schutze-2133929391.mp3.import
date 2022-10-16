@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Bow_Fire_Arrow-Stephan_Schutze-2133929391.mp3-af2d7c1953698f5c7c17998a7946b64a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Bow_Fire_Arrow-Stephan_Schutze-2133929391.mp3"
+dest_files=[ "res://.import/Bow_Fire_Arrow-Stephan_Schutze-2133929391.mp3-af2d7c1953698f5c7c17998a7946b64a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

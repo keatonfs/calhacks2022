@@ -18,4 +18,3 @@ func _on_Button_pressed():
 	hearts.show()
 	hide()
 	#textbox.start()
-	#hide()

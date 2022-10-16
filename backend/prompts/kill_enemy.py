@@ -28,7 +28,7 @@ Description: Bob went on to kill the ghost, as he couldn't move without being ab
 
 Name: Kevin
 Enemy: Knight
-Description: Kevin's sword pierced through the knight's neck, severing it. The knight is dead.
+Description: Kevin's arrow pierced through the knight's neck, severing it. The knight is dead.
 
 --
 

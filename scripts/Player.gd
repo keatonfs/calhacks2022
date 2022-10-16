@@ -1,13 +1,15 @@
-extends KinematicBody2D
+extends Area2D
 
 export (int) var speed = 200
 const arrow_scene = preload("res://Arrow.tscn")
 
+onready var hearts = get_tree().current_scene.get_node("Hearts")
 onready var _animated_sprite = $AnimatedSprite
 onready var attack_timer = $AttackTimer
 
 var health = 100
 var velocity = Vector2()
+var health = 4
 
 const FACING_DIRECTION = {
 	LEFT = 0,
@@ -34,7 +36,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	position += velocity * delta
 	update_animation()
 	
 func update_animation():
@@ -53,3 +55,12 @@ func shoot_arrow():
 	arrow.global_position = global_position
 	arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
 	attack_timer.start()
+
+func decrement_health():
+	health -= 1
+	hearts.decrement_heart()
+
+func _on_Player_body_entered(body):
+	if "Mob" in body.name:
+		decrement_health()
+		body.queue_free()

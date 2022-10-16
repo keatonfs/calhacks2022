@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 onready var textbox = get_tree().current_scene.get_node("Textbox")
+onready var hearts = get_tree().current_scene.get_node("Hearts")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,6 +15,6 @@ func _ready():
 
 
 func _on_Button_pressed():
-	pass
+	hearts.show()
+	hide()
 	#textbox.start()
-	#hide()

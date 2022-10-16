@@ -17,4 +17,4 @@ func _ready():
 func _on_Button_pressed():
 	hearts.show()
 	hide()
-	#textbox.start()
+	textbox.get_intro_message()

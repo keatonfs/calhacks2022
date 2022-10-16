@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const CHAR_READ_RATE = 0.05
+const MAX_CHAR_LEN = 120
 
 onready var textbox_container = $TextboxContainer
 onready var start_symbol = $TextboxContainer/MarginContainer/HBoxContainer/Start
@@ -12,6 +13,7 @@ onready var start_button = get_tree().current_scene.get_node("StartButton")
 
 var game_started = false
 var kill_request = "http://127.0.0.1:5000/kill-enemy?name=%s&enemy=%s"
+var intro_request = "http://127.0.0.1:5000/announcer?name=%s&pronouns=%s&descriptions=%s&record=None&nickname=%s"
 
 enum State {
 	NOT_READY
@@ -26,7 +28,6 @@ var tutorial_text_queue = ["Welcome to the Arena! (Press Enter to Continue)", "M
 
 func _ready():
 	print("Starting state: State.READY")
-	get_intro_message()
 
 func _process(delta):
 	match current_state:
@@ -94,11 +95,11 @@ func change_state(next_state):
 			
 
 func get_intro_message():
-	var response = "http://127.0.0.1:5000/announcer?name=Keaton&pronouns=he/him&descriptions=plain&record=None&nickname=Keaty"
-	_html.request("http://127.0.0.1:5000/take-damage?name=Keaton&enemy=Demon&health=100")
+	var request_str = intro_request % [user_input.user_name, user_input.pronouns, user_input.description, user_input.nickname]
+	_html.request(request_str)
 	
-func get_kill_message(player_name, mob_type):
-	var request_str = kill_request % [player_name, mob_type]
+func get_kill_message(mob_type):
+	var request_str = kill_request % [user_input.user_name, mob_type]
 	_html.request(request_str)
 	
 	
@@ -108,4 +109,12 @@ func _on_Textbox_visibility_changed():
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	print(body.get_string_from_utf8())
-	text_queue.append(body.get_string_from_utf8())
+	var resp_str = body.get_string_from_utf8()
+	var box_str = ""
+	for word in resp_str.split(" "):
+		if box_str.length() + word.length() > MAX_CHAR_LEN:
+			text_queue.append(box_str)
+			box_str = ""
+		box_str = " ".join([box_str, word])
+	text_queue.append(box_str)
+		

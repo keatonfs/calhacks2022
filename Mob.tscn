@@ -26,23 +26,20 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Mob" type="RigidBody2D" parent="."]
+[node name="Mob" type="RigidBody2D"]
+collision_layer = 0
 gravity_scale = 0.0
 script = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.5, 4 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Mob"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "Idle"
 
-[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Mob"]
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 2.5, 4 )
 scale = Vector2( 1.15, 1.6 )
-
-[connection signal="screen_exited" from="Mob/VisibilityNotifier2D" to="Mob" method="_on_VisibilityNotifier2D_screen_exited"]

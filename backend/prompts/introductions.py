@@ -27,6 +27,8 @@ Record: 0 wins 1 loss
 Nickname: Vengeful Knight
 Announcer: Today we witness the revenge of a great knight that was cheated out of a win. Sam the Vengeful Knight is known for their kind hearted demeanor and sword skill through the kingdom. Their heart is however corrupted by vengeance and craves for justice. With their superior wits and discipling, will Sam fulfill their agenda in the arena tonight?
 
+--
+
 Name: {}
 Pronouns: {}
 Description: {}

@@ -27,6 +27,7 @@ animations = [ {
 extents = Vector2( 6, 8 )
 
 [node name="Player" type="Area2D"]
+collision_mask = 3
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

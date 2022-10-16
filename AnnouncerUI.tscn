@@ -70,6 +70,7 @@ rect_min_size = Vector2( 30, 0 )
 position = Vector2( 16, 32 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
@@ -83,7 +84,7 @@ text = "*"
 
 [node name="Label2" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 margin_left = 52.0
-margin_right = 926.0
+margin_right = 932.0
 margin_bottom = 77.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -93,14 +94,14 @@ autowrap = true
 clip_text = true
 
 [node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-margin_left = 930.0
+margin_left = 936.0
 margin_top = 10.0
 margin_right = 944.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 8, 0 )
 size_flags_vertical = 8
 custom_fonts/font = ExtResource( 1 )
-text = "*
+text = "
 "
 
 [node name="Tween" type="Tween" parent="."]

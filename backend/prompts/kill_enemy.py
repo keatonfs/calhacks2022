@@ -20,6 +20,18 @@ Description: Initially, the demon dodges Bill's attack. But Bill swiftly recover
 
 --
 
+Name: Bob
+Enemy: Ghost
+Description: Bob went on to kill the ghost, as he couldn't move without being able to control the undead, which Bob had severed from the person. Bob used a large pair of pliers to kill the ghost, by placing the ghost's head through the pliers and pressing down on the head.
+
+--
+
+Name: Kevin
+Enemy: Knight
+Description: Kevin's sword pierced through the knight's neck, severing it. The knight is dead.
+
+--
+
 Name: {}
 Enemy: {}
 Description: 

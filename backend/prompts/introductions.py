@@ -29,6 +29,24 @@ Announcer: Today we witness the revenge of a great knight that was cheated out o
 
 --
 
+Name: Keaton
+Pronouns: he/him
+Description: plain
+Record: 0 wins 0 losses
+Nickname: Keaty
+Announcer: We have a new contender in the ring today. This bald hunk has yet to find a worthy opponent. It's not for lack of trying. They have fallen victim to a series of deceptions and thence an unspoken revenge. In the ring, Keaty the Plaintiff is confident of their abilities. How will they fare against their competitors? Let us see!
+
+--
+
+Name: Saurabh
+Pronouns: he/him
+Description: tired
+Record: 0 wins 10 losses
+Nickname: Saury
+Announcer: Saury is in the ring today to fight for the honor of his home land. Although his backstory is unknown, it is known that his home is suffering from the heat of a storm and the loss of the king. With only 10 days left to survive, Saury has decided to make it to the arena today. Will he be victorious and save his people? Or will he be destroyed by the monstrous warrior in front of him?
+
+--
+
 Name: {}
 Pronouns: {}
 Description: {}

@@ -57,7 +57,7 @@ class TakeDamage(Resource):
 
 
 # USE: GET request
-# Example curl: curl "http://127.0.0.1:5000/announcer?name=Keaton&pronouns=he/him&descriptions=plain&record=None&nickname=keaty"
+# Example curl: curl "http://127.0.0.1:5000/announcer?name=Keaton&pronouns=he/him&descriptions=plain&record=None&nickname=Keaty"
 class Announcer(Resource):
     def get(self):
         parser = reqparse.RequestParser()

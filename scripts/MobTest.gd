@@ -2,12 +2,6 @@ extends Node2D
 
 export (PackedScene) var mob_scene
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-const TOL = 0.1
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -27,9 +21,9 @@ func _on_MobTimer_timeout():
 	
 	orc.position = orc_spawn_node.position
 	orc.linear_velocity = velocity.rotated(orc_dir)
+	# create instance
 	add_child(orc)
-	if abs(orc_dir - PI) < TOL:
-		orc.flip()
+	orc.set_player($Player)
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()

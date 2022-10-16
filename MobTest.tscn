@@ -6,7 +6,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2, -1, 0, 0, 0, 0, 540, 0, 0, 0, 0, 0, 547, 600, 0, 0, 0, 0, -1, 596, 0, 0, 0, 0, -2, -1 )
+"points": PoolVector2Array( 0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 1023, -1, 0, 0, 0, 0, 1024, 601, 0, 0, 0, 0, 0, 600, 0, 0, 0, 0, -1, 1 )
 }
 
 [node name="Main" type="Node2D"]
@@ -24,13 +24,14 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPos" type="Position2D" parent="."]
+position = Vector2( 500, 300 )
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
 [node name="MobPathSampler" type="PathFollow2D" parent="MobPath"]
-position = Vector2( -2, -1 )
-rotation = 0.00184503
+position = Vector2( -1, 1 )
+rotation = -0.00195315
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

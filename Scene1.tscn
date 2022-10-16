@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/0x72_DungeonTilesetII_v1.4/frames/wall_banner_blue.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Textbox.tscn" type="PackedScene" id=22]
 [ext_resource path="res://UserInput.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scripts/Scene1.gd" type="Script" id=24]
+[ext_resource path="res://StartButton.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 0, 8 )
@@ -414,5 +415,8 @@ position = Vector2( 460, 255 )
 [node name="Textbox" parent="." instance=ExtResource( 22 )]
 
 [node name="UserInput" parent="." instance=ExtResource( 23 )]
+
+[node name="StartButton" parent="." instance=ExtResource( 25 )]
+visible = false
 
 [connection signal="visibility_changed" from="UserInput" to="." method="_on_UserInput_visibility_changed"]

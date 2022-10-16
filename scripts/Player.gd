@@ -7,6 +7,7 @@ onready var hearts = get_tree().current_scene.get_node("Hearts")
 onready var _animated_sprite = $AnimatedSprite
 onready var attack_timer = $AttackTimer
 
+var health = 100
 var velocity = Vector2()
 var health = 4
 

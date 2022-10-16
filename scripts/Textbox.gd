@@ -11,6 +11,7 @@ onready var user_input = get_tree().current_scene.get_node("UserInput")
 onready var start_button = get_tree().current_scene.get_node("StartButton")
 
 var game_started = false
+var kill_request = "http://127.0.0.1:5000/kill-enemy?name=%s&enemy=%s"
 
 enum State {
 	NOT_READY
@@ -95,12 +96,15 @@ func change_state(next_state):
 func get_intro_message():
 	var response = "http://127.0.0.1:5000/announcer?name=Keaton&pronouns=he/him&descriptions=plain&record=None&nickname=Keaty"
 	_html.request("http://127.0.0.1:5000/take-damage?name=Keaton&enemy=Demon&health=100")
-
-
+	
+func get_kill_message(player_name, mob_type):
+	var request_str = kill_request % [player_name, mob_type]
+	_html.request(request_str)
+	
+	
 func _on_Textbox_visibility_changed():
 	current_state = State.TUTORIAL
 	display_text(tutorial_text_queue.pop_front())
-
 
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	print(body.get_string_from_utf8())

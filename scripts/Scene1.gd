@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var textbox = $Textbox
-onready var player = $Player
+onready var player = $MobGen/Player
 
 # Declare member variables here. Examples:
 # var a = 2

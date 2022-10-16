@@ -1,8 +1,5 @@
 extends Node2D
 
-onready var textbox = $Textbox
-onready var player = $YSort/Player
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,5 +14,6 @@ func _ready():
 
 
 func _on_UserInput_visibility_changed():
-	textbox.show()
-	player.show()
+	$Textbox.show()
+	$Player.show()
+	$Necro.set_player($Player)

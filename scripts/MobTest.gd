@@ -40,14 +40,20 @@ func _on_MobTimer_timeout():
 	orc.linear_velocity = velocity.rotated(orc_dir)
 	# create instance
 	add_child(orc)
+<<<<<<< HEAD
+	orc.set_player($Player)
+
+	print($MobTimer.wait_time)
+	$MobTimer.wait_time *= 0.97
+=======
 	orc.set_player(get_tree().current_scene.get_node("YSort/Player"))
+>>>>>>> 10c3e57c47cb3d3bf61ed7eedab7412227aadc14
 	enemies_remaining_in_wave -= 1
 	$MobTimer.wait_time *= 0.98
 	if enemies_remaining_in_wave == 0:
 		$MobTimer.set_paused(true)
 		$WaveTimer.start()
 		
-	
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()

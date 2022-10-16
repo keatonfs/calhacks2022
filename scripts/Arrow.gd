@@ -1,5 +1,8 @@
 extends Area2D
 
+onready var _textbox = get_tree().current_scene.get_node("Textbox")
+onready var _user_input = get_tree().current_scene.get_node("UserInput")
+
 const speed = 300
 var velocity = Vector2(1, 0)
 
@@ -19,7 +22,14 @@ func _on_Arrow_area_entered(area):
 
 func _on_Arrow_body_entered(body):
 	if "Mob" in body.name:
-		print(body.enemy_type)
+		if $KillTimer.is_stopped():
+			_textbox.get_kill_message(_user_input.user_name, body.enemy_type)
+			$KillTimer.start()
 		body.queue_free()
 	if body.name != "Player":
 		destroy()
+
+# prevent too many calls to get_kill_message
+func _on_KillTimer_timeout():
+	pass
+	

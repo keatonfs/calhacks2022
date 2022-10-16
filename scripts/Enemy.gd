@@ -1,6 +1,4 @@
-extends KinematicBody2D
-
-var health;
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -15,12 +13,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
-	#if health <= 0:
-#		die()
-	
-
-func takeDamage():
-	health -= 1
-
-# func die():
-	
+#	pass

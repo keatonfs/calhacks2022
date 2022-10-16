@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fonts/Born2bSportyV2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/TryAgain.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.27451, 0.329412, 0.47451, 1 )
+
+[node name="TryAgain" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -71.0
+margin_top = -27.0
+margin_right = 71.0
+margin_bottom = 27.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_right = 142.0
+margin_bottom = 54.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+margin_right = 142.0
+margin_bottom = 54.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="Button" type="Button" parent="MarginContainer/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 134.0
+margin_bottom = 46.0
+custom_fonts/font = ExtResource( 1 )
+text = "TRY AGAIN"
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/Button" to="." method="_on_Button_pressed"]

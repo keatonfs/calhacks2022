@@ -4,6 +4,7 @@ export (int) var speed = 200
 const arrow_scene = preload("res://Arrow.tscn")
 
 onready var hearts = get_tree().current_scene.get_node("Hearts")
+onready var try_again_button = get_tree().current_scene.get_node("TryAgain")
 onready var _animated_sprite = $AnimatedSprite
 onready var attack_timer = $AttackTimer
 
@@ -49,13 +50,17 @@ func update_animation():
 		_animated_sprite.flip_h = false
 
 func shoot_arrow():
-	var arrow = arrow_scene.instance()
-	get_tree().current_scene.add_child(arrow)
-	arrow.global_position = global_position
-	arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
-	attack_timer.start()
+	if visible:
+		var arrow = arrow_scene.instance()
+		get_tree().current_scene.add_child(arrow)
+		arrow.global_position = global_position
+		arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
+		attack_timer.start()
 
 func decrement_health():
 	health -= 1
 	hearts.decrement_heart()
+	if health == 0:
+		try_again_button.show()
+		hide()
 

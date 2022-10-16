@@ -25,10 +25,10 @@ func _process(delta):
 		_on_Button_pressed()
 
 func set_user_inputs():
-	user_name = user_inputs.pop_front()
-	pronouns = user_inputs.pop_front()
-	nickname = user_inputs.pop_front()
-	description = user_inputs.pop_front()
+	user_name = user_inputs.pop_front().replace(" ", "%20")
+	pronouns = user_inputs.pop_front().replace(" ", "%20")
+	nickname = user_inputs.pop_front().replace(" ", "%20")
+	description = user_inputs.pop_front().replace(" ", "%20")
 
 func _on_Button_pressed():
 	if input.text != "":

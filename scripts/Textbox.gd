@@ -102,14 +102,17 @@ func get_intro_message():
 	
 func get_kill_message(mob_type):
 	var request_str = kill_request % [user_input.user_name, mob_type]
+	text_queue.clear()
 	_html.request(request_str)
 	
 func get_death_message(mob_type):
 	var request_str = death_request % [user_input.user_name, mob_type]
+	text_queue.clear()
 	_html.request(request_str)
 	
 func get_damage_message(mob_type, health):
 	var request_str = damage_request % [user_input.user_name, mob_type, health]
+	text_queue.clear()
 	_html.request(request_str)
 	
 func _on_Textbox_visibility_changed():

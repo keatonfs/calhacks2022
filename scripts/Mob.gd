@@ -27,7 +27,7 @@ func set_player(player):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
-
-
 func _on_Mob_body_entered(body):
-	print(body)
+	if "Player" in body.name:
+		_player.decrement_health()
+		queue_free()

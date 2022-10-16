@@ -27,8 +27,12 @@ animations = [ {
 } ]
 
 [node name="Mob" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 5
 mode = 2
 gravity_scale = 0.0
+contacts_reported = 2
+contact_monitor = true
 script = ExtResource( 9 )
 speed = 150
 enemy_type = "slime"
@@ -45,3 +49,5 @@ animation = "Idle"
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0.5, 0.500001 )
 scale = Vector2( 1.65, 1.65 )
+
+[connection signal="body_entered" from="." to="." method="_on_Mob_body_entered"]

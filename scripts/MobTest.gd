@@ -8,7 +8,7 @@ export (PackedScene) var giant_scene
 onready var enemy_scenes = [mob_scene, demon_scene, slime_scene, giant_scene]
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func start_spawning():
 	randomize()
 	$StartTimer.start()
 	

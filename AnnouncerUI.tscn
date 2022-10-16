@@ -29,18 +29,18 @@ script = ExtResource( 2 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 24.0
+margin_left = 32.0
 margin_top = -117.0
-margin_right = -24.0
+margin_right = -32.0
 margin_bottom = -24.0
 
 [node name="Panel" type="Panel" parent="TextboxContainer"]
-margin_right = 976.0
+margin_right = 960.0
 margin_bottom = 93.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
-margin_right = 976.0
+margin_right = 960.0
 margin_bottom = 93.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
@@ -51,13 +51,13 @@ custom_constants/margin_bottom = 8
 visible = false
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 968.0
+margin_right = 952.0
 margin_bottom = 85.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 968.0
+margin_right = 952.0
 margin_bottom = 85.0
 
 [node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
@@ -83,7 +83,7 @@ text = "*"
 
 [node name="Label2" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 margin_left = 52.0
-margin_right = 942.0
+margin_right = 926.0
 margin_bottom = 77.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -93,9 +93,9 @@ autowrap = true
 clip_text = true
 
 [node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
-margin_left = 946.0
+margin_left = 930.0
 margin_top = 10.0
-margin_right = 960.0
+margin_right = 944.0
 margin_bottom = 77.0
 rect_min_size = Vector2( 8, 0 )
 size_flags_vertical = 8

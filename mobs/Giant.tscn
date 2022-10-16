@@ -31,6 +31,8 @@ collision_layer = 4
 collision_mask = 5
 mode = 2
 gravity_scale = 0.0
+contacts_reported = 2
+contact_monitor = true
 script = ExtResource( 9 )
 speed = 50
 enemy_type = "giant"
@@ -47,3 +49,5 @@ animation = "Idle"
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 7.15256e-07, 6 )
 scale = Vector2( 1.9, 2.5 )
+
+[connection signal="body_entered" from="." to="." method="_on_Mob_body_entered"]

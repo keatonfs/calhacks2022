@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 export (int) var speed = 200
 const arrow_scene = preload("res://Arrow.tscn")
@@ -35,7 +35,7 @@ func get_input():
 
 func _physics_process(delta):
 	get_input()
-	position += velocity * delta
+	velocity = move_and_slide(velocity)
 	update_animation()
 	
 func update_animation():
@@ -59,7 +59,3 @@ func decrement_health():
 	health -= 1
 	hearts.decrement_heart()
 
-func _on_Player_body_entered(body):
-	if "Mob" in body.name:
-		decrement_health()
-		body.queue_free()

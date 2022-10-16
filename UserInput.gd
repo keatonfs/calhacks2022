@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-onready var user_input = $MarginContainer
 onready var label = $MarginContainer/MarginContainer/VBoxContainer/Label
 onready var input = $MarginContainer/MarginContainer/VBoxContainer/LineEdit
 onready var button = $MarginContainer/MarginContainer/VBoxContainer/Button
@@ -21,6 +20,10 @@ var user_inputs = []
 func _ready():
 	label.text = "Enter your name!"
 
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		_on_Button_pressed()
+
 func set_user_inputs():
 	user_name = user_inputs.pop_front()
 	pronouns = user_inputs.pop_front()
@@ -31,7 +34,7 @@ func _on_Button_pressed():
 	if input.text != "":
 		user_inputs.append(input.text)
 		if text_queue.empty():
-			user_input.hide()
+			hide()
 			set_user_inputs()
 		else:
 			label.text = text_queue.pop_front()

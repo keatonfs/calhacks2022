@@ -8,18 +8,18 @@ onready var end_symbol = $TextboxContainer/MarginContainer/HBoxContainer/End
 onready var label = $TextboxContainer/MarginContainer/HBoxContainer/Label2
 
 enum State {
+	NOT_READY
 	TUTORIAL,
 	READY,
 	READING
 }
 
-var current_state = State.READY
+var current_state = State.NOT_READY
 var text_queue = []
-var tutorial_text_queue = ["Move around with the arrow keys (Press Enter to Continue)", "Click the mouse to swing your sword (Press Enter to Continue)", "Good Luck!"]
+var tutorial_text_queue = ["Welcome to the Arena! (Press Enter to Continue)", "Move around with the arrow keys (Press Enter to Continue)", "Click the mouse to swing your sword (Press Enter to Continue)", "Good Luck!"]
 
 func _ready():
 	print("Starting state: State.READY")
-	display_text("Welcome to the Arena! (Press Enter to Continue)")
 
 
 func _process(delta):
@@ -34,14 +34,7 @@ func _process(delta):
 			elif !text_queue.empty():
 				display_text(text_queue.pop_front())
 		State.READING:
-			if Input.is_action_just_pressed("ui_accept"):
-				label.percent_visible = 1.0
-				$Tween.remove_all()
-				end_symbol.text = "*"
-				if !tutorial_text_queue.empty():
-					change_state(State.TUTORIAL)
-				else: 
-					change_state(State.READY)
+			pass
 
 
 func queue_text(next_text):
@@ -80,3 +73,8 @@ func change_state(next_state):
 		State.READING:
 			print("Changing state to State.READING")
 			pass
+
+
+func _on_Textbox_visibility_changed():
+	current_state = State.TUTORIAL
+	display_text(tutorial_text_queue.pop_front())

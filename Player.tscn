@@ -26,17 +26,21 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6, 8 )
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2, 12 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

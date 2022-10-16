@@ -1,5 +1,5 @@
 # Introductions
-# This text represents champion introductions into the ring during the tournament.The announcer will use information about the champion to construct a proper intro to the player.
+# This text represents champion introductions into the ring during the tournament. The announcer will use information about the champion to construct a proper intro to the player.
 
 prompt = """
 Name: Abhi
@@ -16,7 +16,7 @@ Pronouns: she/her
 Description: scrawny, fit, sneaky, deadly
 Record: 0 wins 0 losses
 Nickname: Blood Fox
-Announcer: We have a new contender in the ring today. From the harrowing deserts of the north, Jacky the Blood Fox is known for never missing a target. How will she dispatch the otherworldly beings in front of her? Lets hope we see blood tonight.
+Announcer: We have a new contender in the ring today. From the harrowing deserts of the North, Jacky the Blood Fox is known for never missing a target. How will she dispatch the otherworldly beings in front of her? Lets hope we see blood tonight.
 
 --
 

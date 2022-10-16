@@ -26,9 +26,9 @@ Description: A zombie hurls itself towards Bob, but Bob isn't having it. He shoo
 
 --
 
-Name: Kevin
+Name: Gabby
 Enemy: Knight
-Description: Kevin's arrow pierces through the knight's neck, severing it. The knight is dead.
+Description: Gabby's arrow pierces through the knight's neck, severing it. The knight is dead.
 
 --
 

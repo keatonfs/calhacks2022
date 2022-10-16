@@ -2,10 +2,6 @@
 # This text generates battle descriptions based on the player name, enemy type and final health of the player.
 
 prompt = """
-Take Damage
-
-This text generates battle descriptions based on the player name, enemy type and final health of the player.
-
 Name: Matt
 Enemy: Orc
 Health: 75

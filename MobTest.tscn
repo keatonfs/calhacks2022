@@ -17,7 +17,7 @@ mob_scene = ExtResource( 2 )
 position = Vector2( 166, 93 )
 
 [node name="MobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 
 [node name="StartTimer" type="Timer" parent="."]
 wait_time = 2.0

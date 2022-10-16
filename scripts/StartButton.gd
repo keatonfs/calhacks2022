@@ -2,7 +2,7 @@ extends CanvasLayer
 
 onready var textbox = get_tree().current_scene.get_node("Textbox")
 onready var hearts = get_tree().current_scene.get_node("Hearts")
-onready var mob_gen = get_tree().current_scene.get_node("MobGen")
+onready var mob_gen = get_tree().current_scene.get_node("YSort/MobGen")
 
 # Declare member variables here. Examples:
 # var a = 2

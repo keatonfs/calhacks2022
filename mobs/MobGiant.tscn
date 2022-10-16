@@ -38,16 +38,17 @@ speed = 40
 enemy_type = "giant"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 6.5 )
+position = Vector2( -1, -26.5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -32 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "Idle"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0.5, 0.500001 )
+position = Vector2( 0.5, -31.5 )
 scale = Vector2( 1.65, 1.65 )
 
 [connection signal="body_entered" from="." to="." method="_on_Mob_body_entered"]

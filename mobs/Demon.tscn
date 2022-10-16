@@ -38,18 +38,17 @@ speed = 70
 enemy_type = "demon"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, -35 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "Idle"
 frame = 1
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0.5, -28 )
+position = Vector2( -0.5, 7 )
 scale = Vector2( 2.15, 2.9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -28.5 )
+position = Vector2( -0.5, 7.5 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Mob_body_entered"]

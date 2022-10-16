@@ -40,7 +40,7 @@ func _on_MobTimer_timeout():
 	orc.linear_velocity = velocity.rotated(orc_dir)
 	# create instance
 	add_child(orc)
-	orc.set_player($Player)
+	orc.set_player(get_tree().current_scene.get_node("YSort/Player"))
 	enemies_remaining_in_wave -= 1
 	$MobTimer.wait_time *= 0.98
 	if enemies_remaining_in_wave == 0:

@@ -1,6 +1,11 @@
 extends Node2D
 
 export (PackedScene) var mob_scene
+export (PackedScene) var demon_scene
+export (PackedScene) var slime_scene
+export (PackedScene) var giant_scene
+
+onready var enemy_scenes = [mob_scene, demon_scene, slime_scene, giant_scene]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +17,8 @@ func end_game():
 	$MobTimer.stop()
 
 func _on_MobTimer_timeout():
-	var orc = mob_scene.instance()
+	var orc = enemy_scenes[randi() % 4].instance()
+	#var orc = demon_scene.instance()
 	var orc_spawn_node = get_node("MobPath/MobPathSampler")
 	orc_spawn_node.offset = randi()
 	

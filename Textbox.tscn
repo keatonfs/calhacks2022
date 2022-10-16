@@ -71,7 +71,7 @@ rect_min_size = Vector2( 30, 0 )
 position = Vector2( 16, 32 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]

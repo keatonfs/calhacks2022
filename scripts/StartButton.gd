@@ -19,4 +19,4 @@ func _on_Button_pressed():
 	hearts.show()
 	mob_gen.start_spawning()
 	hide()
-	#textbox.start()
+	textbox.get_intro_message()

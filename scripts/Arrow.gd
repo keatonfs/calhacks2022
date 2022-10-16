@@ -23,7 +23,7 @@ func _on_Arrow_area_entered(area):
 func _on_Arrow_body_entered(body):
 	if "Mob" in body.name:
 		if $KillTimer.is_stopped():
-			_textbox.get_kill_message(_user_input.user_name, body.enemy_type)
+			_textbox.get_kill_message(body.enemy_type)
 			$KillTimer.start()
 		body.queue_free()
 	if body.name != "Player":

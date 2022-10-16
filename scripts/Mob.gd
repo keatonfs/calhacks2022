@@ -1,7 +1,9 @@
 extends RigidBody2D
 
-const SPEED = 100
 const TOL = 0.1
+
+export (int) var speed
+export (String) var enemy_type
 
 onready var _animated_sprite = $AnimatedSprite
 onready var _player = null
@@ -14,7 +16,7 @@ func _ready():
 func _physics_process(delta):
 	if _player != null:
 		dir = (_player.position - position).normalized()
-		linear_velocity = dir * SPEED
+		linear_velocity = dir * speed
 
 func _process(delta):
 	_animated_sprite.flip_h = dir.x < 0

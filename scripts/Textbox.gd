@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const CHAR_READ_RATE = 0.05
+const CHAR_READ_RATE = 0.075
 const MAX_CHAR_LEN = 120
 
 onready var textbox_container = $TextboxContainer
@@ -14,6 +14,8 @@ onready var start_button = get_tree().current_scene.get_node("StartButton")
 var game_started = false
 var kill_request = "http://127.0.0.1:5000/kill-enemy?name=%s&enemy=%s"
 var intro_request = "http://127.0.0.1:5000/announcer?name=%s&pronouns=%s&descriptions=%s&record=None&nickname=%s"
+var death_request = "http://127.0.0.1:5000/player-dies?name=%s&enemy=%s"
+var damage_request = "http://127.0.0.1:5000/player-dies?name=%s&enemy=%s&health=%s"
 
 enum State {
 	NOT_READY
@@ -102,6 +104,13 @@ func get_kill_message(mob_type):
 	var request_str = kill_request % [user_input.user_name, mob_type]
 	_html.request(request_str)
 	
+func get_death_message(mob_type):
+	var request_str = death_request % [user_input.user_name, mob_type]
+	_html.request(request_str)
+	
+func get_damage_message(mob_type, health):
+	var request_str = damage_request % [user_input.user_name, mob_type, health]
+	_html.request(request_str)
 	
 func _on_Textbox_visibility_changed():
 	current_state = State.TUTORIAL

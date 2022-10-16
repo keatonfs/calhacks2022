@@ -5,6 +5,7 @@ const arrow_scene = preload("res://Arrow.tscn")
 
 onready var hearts = get_tree().current_scene.get_node("Hearts")
 onready var try_again_button = get_tree().current_scene.get_node("TryAgain")
+onready var _textbox = get_tree().current_scene.get_node("Textbox")
 onready var _animated_sprite = $AnimatedSprite
 onready var attack_timer = $AttackTimer
 
@@ -57,10 +58,13 @@ func shoot_arrow():
 		arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
 		attack_timer.start()
 
-func decrement_health():
+func decrement_health(mob_name):
 	health -= 1
 	hearts.decrement_heart()
 	if health == 0:
+		_textbox.get_death_message(mob_name)
 		try_again_button.show()
 		hide()
+	else:
+		_textbox.get_damage_message(mob_name, health * 25)
 

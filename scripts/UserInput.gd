@@ -21,7 +21,7 @@ func _ready():
 	label.text = "Enter your name!"
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if visible and Input.is_action_just_pressed("ui_accept"):
 		_on_Button_pressed()
 
 func set_user_inputs():

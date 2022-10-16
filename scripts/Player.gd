@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+const arrow_scene = preload("res://Arrow.tscn")
 
 onready var _animated_sprite = $AnimatedSprite
+onready var attack_timer = $AttackTimer
 
 var velocity = Vector2()
 
@@ -25,6 +27,8 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
+	if Input.is_action_just_released("shoot") and attack_timer.is_stopped():
+		shoot_arrow()
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
@@ -41,3 +45,10 @@ func update_animation():
 		_animated_sprite.flip_h = true
 	else:
 		_animated_sprite.flip_h = false
+
+func shoot_arrow():
+	var arrow = arrow_scene.instance()
+	get_tree().current_scene.add_child(arrow)
+	arrow.global_position = global_position
+	arrow.rotation = self.global_position.direction_to(get_global_mouse_position()).angle()
+	attack_timer.start()
